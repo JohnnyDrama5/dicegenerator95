@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dice Generator</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <!--font sourced from google fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Agdasima&display=swap" rel="stylesheet">
+  <style>
+    .dice {
+      width: 100px;
+      height: 100px;
+      background-color: #fff;
+      border: 1px solid #999;
+      text-align: center;
+      line-height: 100px;
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    .roll-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+   <h1>Simple Dice Generator</h1>
+   <label for="dice-type">Select Dice Type:</label>
+    <select id="dice-type">
+    <option value="4">D4</option>
+    <option value="6">D6</option>
+    <option value="8">D8</option>
+    <option value="10">D10</option>
+    <option value="12">D12</option>
+    <option value="20">D20</option>
+  </select>
+  <br>
+  <br>
+  <div class="dice" id="dice">-</div>
+  <button class="roll-button" onclick="rollDice()">Roll!</button>
+  <br>
+  <br>
+</div>
+
+  <script>
+    function rollDice() {
+      var diceElement = document.getElementById('dice');
+      var diceTypeElement = document.getElementById('dice-type');
+      var diceType = parseInt(diceTypeElement.value);
+      var randomNumber = Math.floor(Math.random() * diceType) + 1;
+      diceElement.innerText = randomNumber;
+    }
+  </script>
+  <script type="text/javascript" src="index.js"></script>
+</body>
+<footer>
+    Designed by Lewis for devsInc
+</footer>
+</html>

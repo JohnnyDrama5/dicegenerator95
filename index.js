@@ -1,0 +1,1 @@
+alert("Welcome! Choose your die and roll to play!");
